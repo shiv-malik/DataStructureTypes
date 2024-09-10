@@ -17,6 +17,21 @@ void insert_all_words(int k, string file_name, Container& L)
     cout << "\t\tInsert = " << eTime << endl;
 }
 
+void find_all_words(string file_name, Container& L)
+{
+    Timer t;
+    double eTime;
+    ifstream in {file_name};
+    int limit = k * MAXWORDS / 10;
+    t.start();
+    for (string word; (in >> word) && limit > 0; --limit)
+        L.find(word);
+
+    t.elapsedUserTime(eTime);
+    in.close();
+    cout << "F = " << eTime << endl;
+}
+
 void remove_all_words(int k, string file_name, Container& L)
 {
     Timer t;
