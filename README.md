@@ -8,4 +8,7 @@ functions:
   2. remove: removes from container
   3. find (not in Stacks/Queues): depending on implementation, either returns reference, index, or boolean value
 
+Testing:
+All containers were emperically tested and analyzed to determine time complexity and memory usage.
+
 All code is in designated branches for each container/algorithm.
