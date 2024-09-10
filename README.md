@@ -9,6 +9,6 @@ functions:
   3. find (not in Stacks/Queues): depending on implementation, either returns reference, index, or boolean value
 
 Testing:
-All containers were emperically tested and analyzed to determine time complexity and memory usage. Testing framework is provided in the main branch for simplicity.
+All containers were emperically tested and analyzed to determine time complexity. Tested with file of roughly 40,000 words. Inserting, finding, and removing all words at a step of 1/10. For instance, the first step would analyze the time to add 4,000 words, then the second step would add 8,000, etc. This gives us a way of measuring insert, find, and remove in O(n) time (n being all 40,000 words), meaning if we graph an O(n) complexity to insert all words, inserting 1 word would be an O(1) process. The testing framework is provided in the main branch for simplicity.
 
 All code is in designated branches for each container/algorithm.
