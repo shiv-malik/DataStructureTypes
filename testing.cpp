@@ -17,6 +17,7 @@ void insert_all_words(int k, string file_name, Container& L)
     cout << "\t\tInsert = " << eTime << endl;
 }
 
+//find all words not for Stacks/Queues
 void find_all_words(string file_name, Container& L)
 {
     Timer t;
