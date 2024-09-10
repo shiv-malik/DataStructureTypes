@@ -1,13 +1,16 @@
+#ifndef CONTAINER_H
+#define HEADER_H
+
 #include <iostream>
 
 using namespace std;
 
-constexpr int NWORDS = 45392;
+constexpr int MAXWORDS = 45392;
 
-struct Holder
+struct Container
 {
     const string name;
-    Holder(const string & new_name)
+    Container(const string & new_name)
         : name(new_name) { }
 
     virtual void insert( const string & word) = 0;
@@ -16,15 +19,15 @@ struct Holder
     virtual bool is_empty() = 0;
     virtual bool is_full() = 0;
     virtual void print(ostream & out) = 0;
-    virtual ~Holder() { }
-    Holder(const Holder & L) = delete;
-    Holder& operator =(const Holder & L) = delete;
+    virtual ~Container() { }
+    Container(const Container & L) = delete;
+    Container& operator =(const Container & L) = delete;
 };
 
 struct Stack
-    : public Holder
+    : public Container
 {
-    Stack(const string & new_name) : Holder(new_name) { }
+    Stack(const string & new_name) : Container(new_name) { }
     virtual void push(const string & word) = 0;
     virtual void pop() = 0;
     virtual string top() = 0;
@@ -35,9 +38,9 @@ struct Stack
 };
 
 struct Queue
-    : public Holder
+    : public Container
 {
-    Queue(const string & new_name) : Holder(new_name) { }
+    Queue(const string & new_name) : Container(new_name) { }
     virtual void enq(const string & word) = 0;
     virtual void deq() = 0;
     virtual string next() = 0;
@@ -47,7 +50,7 @@ struct Queue
     virtual string peek() { return next(); }
 };
 
-ostream & operator << (ostream & out, Holder & L);
+ostream & operator << (ostream & out, Container & L);
 
 class ArrayStack
     : public Stack
@@ -56,7 +59,7 @@ class ArrayStack
     int size;
     string * buf;
 public:
-    ArrayStack(int cap = NWORDS);
+    ArrayStack(int cap = MAXWORDS);
     void push(const string & word);
     void pop();
     string top();
@@ -100,7 +103,7 @@ class ArrayQueue
     int front, rear;
     string * buf;
 public:
-    ArrayQueue(int cap = NWORDS);
+    ArrayQueue(int cap = MAXWORDS);
     void enq(const string & word);
     void deq();
     string next();
@@ -125,8 +128,4 @@ public:
     ~LinkedQueue();
 };
 
-void error(string word, string msg);
-void insert_all_words(int k, string file_name, Holder & L);
-void remove_all_words(int k, string file_name, Holder & L);
-void measure_holder(string file_name, Holder & L);
-void measure_holders(string input_file);
+#endif
