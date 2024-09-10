@@ -9,6 +9,6 @@ functions:
   3. find (not in Stacks/Queues): depending on implementation, either returns reference, index, or boolean value
 
 Testing:
-All containers were emperically tested and analyzed to determine time complexity and memory usage.
+All containers were emperically tested and analyzed to determine time complexity and memory usage. Testing framework is provided in the main branch for simplicity.
 
 All code is in designated branches for each container/algorithm.
