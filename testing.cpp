@@ -56,6 +56,7 @@ void measure_Container(string file_name, Container& L)
     {
         cout << "\tK = " << k << endl;
         insert_all_words(k, file_name, L);
+        find_all_words(k, file_name, L);
         remove_all_words(k, file_name, L);
         if (!L.is_empty())
             error(L.name, "is not empty");
