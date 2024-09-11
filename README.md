@@ -1,5 +1,5 @@
 Built and tested various container types including Stacks/Queues, Hash Functions, Binary Search Trees, and AVL Trees.
-Additionally, built/tested Sorting Algorithms and Dijkstra's and Kruskal's Searching Algorithms.
+Additionally, built/tested Sorting Algorithms and Dijkstra's and Kruskal's Graph Searching Algorithms.
 
 
 All container types adhere to these basic contraints:
