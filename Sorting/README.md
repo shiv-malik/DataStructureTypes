@@ -1,2 +1,2 @@
 # Sorting Algorithms
-Built QuickSort, HeapSort, IntroSort, and ShellSort
+Built QuickSort, HeapSort, and ShellSort
